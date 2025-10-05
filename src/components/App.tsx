@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/App.css';
+import Header from './Header';
+import Tabs from './Tabs';
 
 const App: React.FC = () => {
+  const [activeTab, setActiveTab] = useState('expenditure');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Finance Tracker</h1>
-        <p>Welcome to your finance tracker application!</p>
-      </header>
+      <Header />
+      <div className="container mt-4">
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      </div>
     </div>
   );
 };
